@@ -51,6 +51,6 @@ hideToggle.addEventListener('change', () => {
   const isHidden = hideToggle.checked;
   const elementsToToggle = progressBlock.querySelectorAll('.progress-ring, .all-controls label:not(:last-child)');
   elementsToToggle.forEach(el => {
-    el.style.display = isHidden ? 'none' : 'flex';
+    el.style.visibility = isHidden ? 'hidden' : 'visible';  
   });
 });
