@@ -1,0 +1,143 @@
+/* RESET & BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #eaf0f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.progress-block {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  width: 320px;
+  height: 568px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  transition: opacity 0.5s ease;
+}
+
+@media (orientation: landscape) {
+  .progress-block {
+    width: 568px;
+    height: 320px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .progress-ring {
+    margin: 0;
+  }
+
+  .all-controls {
+    margin: 0;
+    justify-content: center;
+  }
+}
+
+/* HEADER */
+h2 {
+  font-size: 14px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* PROGRESS RING */
+.progress-ring {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  transition: transform 0.3s linear;
+}
+
+/* CONTROLS */
+.all-controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 160px;
+  height: 30px;
+}
+
+/* ALL INPUTS & SWITCHES */
+input[type="text"],
+input[type="checkbox"] {
+  width: 60px;
+  height: 24px;
+  border-radius: 999px;
+  border: none;
+  background: #ccc;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* TEXT INPUT */
+input[type="text"] {
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
+  padding: 0;
+}
+
+/* REMOVE SPINNERS */
+input[type="text"]::-webkit-outer-spin-button,
+input[type="text"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* SWITCH STYLE */
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+  background: #00aaff;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: translateX(36px);
+}

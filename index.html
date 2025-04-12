@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progress Block</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="progress-block" id="progressBlock">
+      <h2>Progress</h2>
+
+      <div class="progress-ring" id="progressRing">
+        <svg width="130" height="130">
+          <circle cx="65" cy="65" r="55" stroke="#e6e6e6" stroke-width="10" fill="none" />
+          <circle id="progressCircle" cx="65" cy="65" r="55" stroke="#007bff" stroke-width="10" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <div class="all-controls">
+        <label>
+          <input type="text" id="valueInput" maxlength="3" />
+          <span>Value</span>
+        </label>
+        <label>
+          <input type="checkbox" id="animateToggle" />
+          <span>Animate</span>
+        </label>
+        <label>
+          <input type="checkbox" id="hideToggle" />
+          <span>Hide</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
